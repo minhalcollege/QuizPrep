@@ -22,7 +22,7 @@ import okhttp3.Response;
  */
 
 public class GmailDataSource {
-    // private final static String url = "https://api.androidhive.info/json/inbox.json";
+
     private final static OkHttpClient client = new OkHttpClient();
 
     public static void getGmail(final GmailListener listener, String url){

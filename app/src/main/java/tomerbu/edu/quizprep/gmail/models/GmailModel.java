@@ -1,12 +1,26 @@
 package tomerbu.edu.quizprep.gmail.models;
 
+import android.text.TextUtils;
+
 public class GmailModel {
-    String pictureUrl = "https://api.androidhive.info/json/google.png";
-    String message;
+    final String pictureUrl;
+    final String message;
+
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 
     public GmailModel(String message, String pictureUrl) {
         this.message = message;
-        this.pictureUrl = pictureUrl;
+        if (!TextUtils.isEmpty(pictureUrl))
+            this.pictureUrl = pictureUrl;
+        else
+            this.pictureUrl = "https://api.androidhive.info/json/google.png";
     }
 
     @Override
